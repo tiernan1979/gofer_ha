@@ -1,0 +1,29 @@
+notify:
+  name: Send notification
+  description: Sends a notification to a Gofer agent running on a device.
+  fields:
+    message:
+      name: Message
+      description: The notification message text.
+      required: true
+      example: Laundry is done
+      selector:
+        text:
+          multiline: true
+    title:
+      name: Title
+      description: The notification title.
+      example: Gofer
+      selector:
+        text: {}
+    device_id:
+      name: Device
+      description: Target Gofer devices. Leave empty to notify all devices.
+      selector:
+        device:
+          integration: gofer
+    actions:
+      name: Actions
+      description: Optional action buttons, each with an action_id, title and optional uri.
+      selector:
+        object: {}

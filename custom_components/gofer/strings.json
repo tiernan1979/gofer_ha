@@ -1,0 +1,56 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add Gofer device",
+        "description": "Enter the device id of the Gofer agent (found in the agent's configuration). Usually devices are discovered automatically once the agent connects.",
+        "data": {
+          "device_id": "Device id",
+          "name": "Device name"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This device is already configured",
+      "invalid_discovery_info": "Invalid announcement from the Gofer agent"
+    }
+  },
+  "services": {
+    "notify": {
+      "name": "Send notification",
+      "description": "Sends a notification to a Gofer agent running on a device.",
+      "fields": {
+        "message": {
+          "name": "Message",
+          "description": "The notification message text.",
+          "example": "Laundry is done"
+        },
+        "title": {
+          "name": "Title",
+          "description": "The notification title.",
+          "example": "Gofer"
+        },
+        "device_id": {
+          "name": "Device",
+          "description": "Target Gofer devices. Leave empty to notify all devices."
+        },
+        "actions": {
+          "name": "Actions",
+          "description": "Optional action buttons, each with an action_id, title and optional uri.",
+          "example": "open: Open in browser"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Gofer options",
+        "description": "Rename this Gofer device. Sensors and commands are edited from the Gofer desktop app.",
+        "data": {
+          "name": "Device name"
+        }
+      }
+    }
+  }
+}
